@@ -306,7 +306,7 @@ function renderContent(submenu) {
                         Galerie
                     </h2>
                     <div class="gallery-grid">
-                             <a href="#" class="card">
+                            <a href="galerie.html" class="card">
                                 <div class="card__head">
                                     <div class="card__image"></div>
                                     <div class="card__author">
