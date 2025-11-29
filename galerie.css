@@ -164,4 +164,10 @@
             font-size: 18px;
             padding: 8px 15px;
         }
+        .card-pri{
+            display: flex;
+            flex-direction: column;
+            margin: 10%;
+            gap: 2rem;
+        }
     }
