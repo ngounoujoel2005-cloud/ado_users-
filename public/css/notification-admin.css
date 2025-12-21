@@ -1,0 +1,149 @@
+:root{
+      --bg:#f6fbf8;
+      --panel:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --border:#e6e8ee;
+      --shadow:0 10px 30px rgba(2,6,23,.06);
+      --green:#16a34a; --green-600:#059669; --green-100:#dcfce7;
+      --purple:#6d28d9; --purple-500:#7c3aed; --purple-grad:linear-gradient(90deg,#7c3aed,#9333ea);
+      --red:#e11d48; --red-100:#fee2e2;
+      --blue:#3b82f6; --blue-100:#e0f2fe;
+      --amber:#f59e0b; --amber-100:#fff7ed;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 80% 20%, rgba(5,150,105,.06), transparent 60%),
+        radial-gradient(900px 500px at 0% 100%, rgba(34,197,94,.06), transparent 60%),
+        var(--bg);
+    }
+
+    /* HEADER */
+    .header{
+      background:var(--panel);
+      padding:14px 22px;
+      display:flex;align-items:center;justify-content:space-between;
+      box-shadow:0 2px 8px rgba(2,6,23,.06);
+    }
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand .logo{
+      width:36px;height:36px;border-radius:10px;background:var(--green-600);
+      display:grid;place-items:center;color:#fff;font-size:18px
+    }
+    .brand h1{margin:0;color:var(--green-600);font-size:22px;line-height:1}
+    .brand small{color:var(--muted)}
+    .role{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:14px}
+
+    /* NAV */
+    .nav-wrap{max-width:1100px;margin:18px auto 0;padding:0 18px}
+    .nav{
+      background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
+      padding:12px 18px;box-shadow:var(--shadow);display:flex;gap:30px;align-items:center;
+    }
+    .nav a{
+      text-decoration:none;color:#111827;font-weight:700;font-size:14px;
+      display:flex;gap:8px;align-items:center;position:relative;padding:10px 16px;border-radius:12px;
+    }
+    .nav a:hover{background:#f3f4f6}
+    .nav a.active{
+      color:#fff;background:var(--purple-grad);box-shadow:0 8px 22px rgba(124,58,237,.28);
+    }
+    .nav a.logout{color:#e11d48;margin-left:auto;background:transparent}
+    .nav a.logout:hover{background:#fef2f2}
+
+    /* PAGE WRAP */
+    .wrap{max-width:1100px;margin:22px auto;padding:0 22px}
+    .top-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+    .title{font-size:24px;color:#14532d;margin:0}
+    .subtitle{color:var(--muted);margin-top:6px}
+    .btn-new{
+      display:inline-flex;gap:8px;align-items:center;background:var(--green-600);color:#fff;border:none;
+      border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer;box-shadow:0 6px 18px rgba(5,150,105,.22);
+    }
+
+    /* CARDS LIST */
+    .list{display:grid;gap:14px}
+    .card{
+      background:var(--panel);border:1px solid var(--border);border-radius:14px;
+      box-shadow:var(--shadow);padding:16px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:flex-start;
+    }
+    .icon{
+      width:44px;height:44px;border-radius:12px;display:grid;place-items:center;color:#fff;font-size:18px;
+    }
+    .i-alert{background:#10b981}
+    .i-pub{background:#60a5fa}
+    .i-remind{background:#22c55e}
+
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+    .badge{
+      font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid;
+      display:inline-flex;gap:6px;align-items:center
+    }
+    .b-urgent{background:var(--red-100); color:#991b1b; border-color:#fecaca}
+    .b-update{background:#dcfce7; color:#166534; border-color:#bbf7d0}
+    .b-remind{background:var(--amber-100); color:#9a3412; border-color:#fed7aa}
+    .b-audience{background:#f3f4f6; color:#374151; border-color:#e5e7eb}
+
+    .card-title{font-weight:800;margin-bottom:8px}
+    .card p{margin:0;color:#111827}
+    .meta{margin-top:8px;color:#6b7280;font-size:13px}
+
+    /* MODAL */
+    .modal{position:fixed;inset:0;display:none;place-items:center;z-index:50}
+    .modal.open{display:grid;}
+    .backdrop{position:absolute;inset:0;background:rgba(2,6,23,.55);backdrop-filter:blur(2px)}
+    .dialog{
+      position:relative;background:var(--panel);border-radius:14px;border:1px solid var(--border);
+      width:min(92vw,560px);box-shadow:0 24px 60px rgba(2,6,23,.35);
+      padding:16px; z-index:1;
+    }
+    .dialog header{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px}
+    .dialog h3{margin:0;font-size:18px}
+    .x{border:none;background:transparent;font-size:18px;cursor:pointer;color:#64748b}
+
+    .form{display:grid;gap:14px}
+    .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .form label{display:block;font-size:13px;margin-bottom:4px;color:#374151}
+
+    .input-icon{position:relative}
+    .input-icon i{position:absolute;top:50%;left:10px;transform:translateY(-50%);color:#6b7280;font-size:14px}
+    input[type="text"], select, textarea{
+      width:100%;padding:10px 12px 10px 32px;border-radius:10px;border:1px solid #cbd5e1;background:#f1f5f9;color:#0f172a;outline:none;
+    }
+    textarea{min-height:90px;resize:vertical}
+
+    .dialog .actions{display:flex;gap:10px;justify-content:flex-end;padding-top:6px}
+    .btn{padding:10px 14px;border-radius:10px;border:1px solid var(--border);background:#fff;color:#0f172a;cursor:pointer;font-weight:800}
+    .btn-green{background:var(--green-600);color:#fff;border-color:#16a34a}
+    .btn:hover{opacity:.9}
+
+    @media (max-width:560px){
+      .row2{grid-template-columns:1fr}
+      .dialog{padding:12px}
+    }
+    @media (max-width: 1100px) {
+    .header, .nav-wrap, .wrap { padding-left: 8px; padding-right: 8px; }
+    .nav { gap: 12px; flex-wrap: wrap; }
+    .list { gap: 8px; }
+    .card { grid-template-columns: 1fr; padding: 8px; }
+    .icon { width: 32px; height: 32px; font-size: 14px; }
+    .card-title { font-size: 15px; }
+    .meta { font-size: 11px; }
+    .btn-new { font-size: 13px; padding: 6px 8px; }
+}
+@media (max-width: 700px) {
+    .header, .nav-wrap, .wrap { padding-left: 2px; padding-right: 2px; }
+    .nav { gap: 6px; }
+    .card { padding: 4px; }
+    .btn-new { font-size: 11px; padding: 4px 6px; }
+}
+@media (max-width: 500px) {
+    .header, .nav-wrap, .wrap { padding: 0; }
+    .nav { gap: 2px; }
+    .card { padding: 2px; }
+    .btn-new { font-size: 10px; padding: 2px 4px; }
+}

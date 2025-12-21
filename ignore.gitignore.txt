@@ -1,0 +1,23 @@
+# Dépendances
+/vendor
+/node_modules
+
+# Fichier d'environnement
+.env
+.env.*
+
+# Cache & logs
+/storage/*.key
+/storage/logs
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/views
+
+# Fichiers générés
+/public/storage
+
+# IDE & OS
+/.idea
+/.vscode
+.DS_Store
+Thumbs.db
