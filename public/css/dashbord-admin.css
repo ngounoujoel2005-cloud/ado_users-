@@ -1,0 +1,298 @@
+/* Ajouts pour le dashboard UI style image */
+        .sidebar {
+            position: fixed;
+            left: 0; top: 0; bottom: 0;
+            width: 220px;
+            background: #166534;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            z-index: 10;
+            box-shadow: 0 0 24px rgba(16,185,129,0.08);
+        }
+        .sidebar-header {
+            padding: 14px 8px 12px;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: #10b981;
+            border-bottom: 1px solid #dcfce7;
+        }
+        .sidebar-nav {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            margin-top: 12px;
+        }
+        .sidebar-nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.18s;
+        }
+        /* Onglet actif : fond vert clair et texte vert foncé */
+        .sidebar-nav a.active {
+            background: #dcfce7;
+            color: #166534;
+        }
+        /* Hover : fond vert clair et texte vert foncé, sauf si déjà actif */
+        .sidebar-nav a:not(.active):hover {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .sidebar-footer {
+            padding: 18px 24px;
+            border-top: 1px solid #dcfce7;
+            font-size: 13px;
+            text-align: center;
+            background: #10b981;
+        }
+        .sidebar .support-img {
+            width: 100%;
+            margin-top: 0 auto;
+            border-radius: 10px;
+            background: #dcfce7;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-dashboard {
+            margin-left: 220px;
+            padding: 32px 24px;
+            min-height: 100vh;
+            background: #f9fafb;
+        }
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+        .dashboard-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #166534;
+        }
+        .dashboard-user {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: #374151;
+        }
+        .dashboard-user img {
+            width: 36px; height: 36px; border-radius: 50%;
+            border: 2px solid #10b981;
+        }
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        .dashboard-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(16,185,129,0.07);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-height: 120px;
+            transition: transform 0.2s;
+        }
+        .dashboard-card:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 8px 24px rgba(16,185,129,0.13);
+        }
+        .card-title {
+            font-size: 15px;
+            color: #6b7280;
+            margin-bottom: 4px;
+        }
+        .card-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #166534;
+        }
+        .card-desc {
+            font-size: 13px;
+            color: #9ca3af;
+        }
+        .dashboard-overview {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+        }
+        .overview-card, .activity-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(16,185,129,0.07);
+            padding: 24px;
+            min-height: 120px;
+        }
+        .overview-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .overview-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 14px;
+            color: #374151;
+        }
+        .overview-list li span {
+            font-weight: 600;
+            color: #10b981;
+        }
+        .total-sale {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .circle-progress {
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            background: conic-gradient(#10b981 0% 70%, #dcfce7 70% 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #166534;
+            font-weight: 700;
+        }
+        .activity-list {
+            margin: 0; padding: 0; list-style: none;
+            font-size: 13px;
+            color: #374151;
+        }
+        .activity-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .activity-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: #10b981;
+            display: inline-block;
+        }
+        .view-all-btn {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 13px;
+            color: #10b981;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        /* Responsive sidebar & dashboard */
+@media (max-width: 1100px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        flex-direction: row;
+        height: auto;
+        min-height: 56px;
+        box-shadow: none;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0;
+    }
+    .sidebar-header, .sidebar-footer {
+        display: none;
+    }
+    .sidebar-nav {
+        flex-direction: row;
+        gap: 8px;
+        margin-top: 0;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .sidebar-nav a {
+        padding: 10px 16px;
+        font-size: 14px;
+        border-radius: 8px;
+        min-width: 80px;
+        justify-content: center;
+    }
+    .main-dashboard {
+        margin-left: 0;
+        padding: 16px 8px;
+    }
+    .dashboard-cards, .dashboard-overview {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        flex-direction: column;
+        width: 100%;
+        min-height: 0;
+        align-items: stretch;
+    }
+    .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px;
+        justify-content: center;
+    }
+    .sidebar-nav a {
+        padding: 8px 12px;
+        font-size: 13px;
+        min-width: 60px;
+    }
+    .main-dashboard {
+        padding: 8px 4px;
+    }
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 18px;
+    }
+    .dashboard-cards, .dashboard-overview {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .dashboard-card, .overview-card, .activity-card {
+        min-height: 80px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .sidebar-nav a {
+        padding: 6px 6px;
+        font-size: 12px;
+        min-width: 40px;
+    }
+    .main-dashboard {
+        padding: 4px 2px;
+    }
+    .dashboard-title {
+        font-size: 18px;
+    }
+    .dashboard-card, .overview-card, .activity-card {
+        min-height: 60px;
+        padding: 8px;
+    }
+}
+
+/* Animation effet fade-in */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s, transform 0.7s; }
+        .fade-in.visible { opacity: 1; transform: none; }

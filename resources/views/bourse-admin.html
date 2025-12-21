@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrateur - Association Excellence & Développement</title>
+    <link rel="stylesheet" href="bourse-admin.css">
+    <link rel="stylesheet" href="dashbord-admin.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">M - NGOUNOU</div>
+        <nav class="sidebar-nav">
+            <a href="index-admin.html" class="active"><i class="fa fa-home"></i> Home</a>
+            <a href="annonce-admin.html"><i class="fa fa-bullhorn"></i> Annonces</a>
+            <a href="publication-admin.html"><i class="fa fa-file"></i> Publications</a>
+            <a href="historique-admin.html"><i class="fa fa-clock"></i> Historique</a>
+            <a href="media-admin.html"><i class="fa fa-image"></i> Médias</a>
+            <a href="commentaire-admin.html"><i class="fa fa-comments"></i> Commentaires</a>
+            <a href="notification-admin.html"><i class="fa fa-bell"></i> Notifications</a>
+            <a href="femmes-admin.html"><i class="fa fa-bell"></i> femme adolescence</a>
+            <a href="activites-admin.html"><i class="fa fa-bell"></i> activites</a>
+            <a href="bourse-admin.html"><i class="fa fa-bell"></i> bourse</a>
+            <a href="contact-admin.html"><i class="fa fa-bell"></i> contact</a>
+            <a href="deconnection-admin.html"><i class="fa fa-sign-out"></i> Quitter</a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="administration.html" style="text-decoration: none;"><div class="support-img">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Support" style="width:40px;">
+                <span style="margin-left:8px; color: black;">Administration</span>
+            </div></a>
+        </div>
+    </aside>
+    <!-- Main Dashboard -->
+    <main class="main-dashboard">
+        <div class="dashboard-header fade-in">
+            <div>
+                <div class="dashboard-title">Dashboard Administrateur</div>
+                <div style="color:#6b7280;font-size:15px;">Bienvenue sur l'espace de gestion de l'association adolescence banka</div>
+            </div>
+            <div class="dashboard-user">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin">
+                <span>ngounou joel Admin</span>
+            </div>
+        </div>
+
+                <!-- TOP ACTIONS -->
+        <div class="top-actions">
+            <div class="page-header">
+            <h2>Gestion des bourses annuelle </h2>
+            <div class="stats">plus de 12.000 boursiers deja resencer sur la platforme</div>
+            </div>
+        </div>
+
+    <div id="app">
+      <!-- Navigation -->
+      <nav class="navigation">
+        <div class="nav-container">
+          <a href="bourse-admin.html" class="nav-item active" data-panel="programmes">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.5 7.5L10 2.5L17.5 7.5V16.25C17.5 16.5815 17.3683 16.8995 17.1339 17.1339C16.8995 17.3683 16.5815 17.5 16.25 17.5H3.75C3.41848 17.5 3.10054 17.3683 2.86612 17.1339C2.6317 16.8995 2.5 16.5815 2.5 16.25V7.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7.5 17.5V10H12.5V17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+           Programme de la Bourse
+          </a>
+          <a href="bourse-admin.html" class="nav-item" data-panel="historique">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 17.5C14.1421 17.5 17.5 14.1421 17.5 10C17.5 5.85786 14.1421 2.5 10 2.5C5.85786 2.5 2.5 5.85786 2.5 10C2.5 14.1421 5.85786 17.5 10 17.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M10 6.25V10L12.5 11.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Historique
+          </a>
+          <a href="bourse-admin.html" class="nav-item" data-panel="galerie">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3.75" y="5" width="12.5" height="12.5" rx="1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M13.75 2.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6.25 2.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3.75 10H16.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Galerie
+          </a>
+          <a href="bourse-admin.html" class="nav-item" data-panel="boursiers">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.25 8.75L10 2.5L3.75 8.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M10 2.5V12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2.5 12.5H17.5V16.25C17.5 16.5815 17.3683 16.8995 17.1339 17.1339C16.8995 17.3683 16.5815 17.5 16.25 17.5H3.75C3.41848 17.5 3.10054 17.3683 2.86612 17.1339C2.6317 16.8995 2.5 16.5815 2.5 16.25V12.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Liste des Boursiers Actuels
+          </a>
+          <a href="bourse-admin.html" class="nav-item" data-panel="inscription">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.1667 17.5V15.8333C14.1667 14.9493 13.8155 14.1014 13.1904 13.4763C12.5652 12.8512 11.7174 12.5 10.8333 12.5H4.16667C3.28261 12.5 2.43476 12.8512 1.80964 13.4763C1.18452 14.1014 0.833336 14.9493 0.833336 15.8333V17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7.50001 9.16667C9.34096 9.16667 10.8333 7.67428 10.8333 5.83333C10.8333 3.99238 9.34096 2.5 7.50001 2.5C5.65906 2.5 4.16667 3.99238 4.16667 5.83333C4.16667 7.67428 5.65906 9.16667 7.50001 9.16667Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M19.1667 17.5V15.8333C19.1661 15.0948 18.9204 14.3773 18.4679 13.7936C18.0154 13.2099 17.3819 12.793 16.6667 12.6083" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M13.3333 2.60834C14.0503 2.79192 14.6858 3.20892 15.1396 3.79359C15.5935 4.37827 15.8398 5.09736 15.8398 5.8375C15.8398 6.57765 15.5935 7.29674 15.1396 7.88141C14.6858 8.46609 14.0503 8.88309 13.3333 9.06667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Détails d'Inscription
+          </a>
+          <a href="bourse-admin.html" class="nav-item" data-panel="partenaires">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.5 14.1667C17.5 14.6087 17.3244 15.0326 17.0118 15.3452C16.6993 15.6577 16.2754 15.8333 15.8333 15.8333H5.83333L2.5 19.1667V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H15.8333C16.2754 2.5 16.6993 2.67559 17.0118 2.98816C17.3244 3.30072 17.5 3.72464 17.5 4.16667V14.1667Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Partenaires & Sponsors
+          </a>
+        </div>
+      </nav>
+
+      <!-- NEW: Admin sub-panels (one per sous-onglet) -->
+      <div class="admin-panels">
+
+        <!-- Programmes (active by default) -->
+        <section id="panel-programmes" class="admin-tab-panel active">
+          <div class="admin-management">
+            <div class="admin-row">
+              <div class="admin-panel">
+                <h3>Créer / Éditer une bourse</h3>
+                <form id="adminForm" class="admin-form">
+                  <input type="hidden" id="itemId" value="">
+                  <div class="form-group">
+                    <label for="title">Titre</label>
+                    <input id="title" type="text" placeholder="Titre de la bourse" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="summary">Résumé court</label>
+                    <input id="summary" type="text" placeholder="Petit résumé (1-2 lignes)">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="amount">Montant</label>
+                      <input id="amount" type="text" placeholder="Ex : 5,000€">
+                    </div>
+                    <div class="form-group">
+                      <label for="duration">Durée</label>
+                      <input id="duration" type="text" placeholder="Ex : 3 ans">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="deadline">Date limite</label>
+                      <input id="deadline" type="date">
+                    </div>
+                    <div class="form-group">
+                      <label for="contactPhone">Téléphone contact</label>
+                      <input id="contactPhone" type="tel" placeholder="+223 XX XX XX XX">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="content">Contenu / Description (texte)</label>
+                    <textarea id="content" placeholder="Description complète..." rows="6"></textarea>
+                  </div>
+
+                  <div class="form-actions">
+                    <button type="button" class="btn small" id="saveDraftBtn">Enregistrer brouillon</button>
+                    <button type="button" class="btn small" id="publishBtn">Publier</button>
+                    <button type="reset" class="btn small" id="clearFormBtn">Effacer</button>
+                  </div>
+                  <div class="admin-feedback" id="formFeedback" aria-live="polite" style="display:none"></div>
+                </form>
+              </div>
+
+              <div class="admin-list-panel">
+                <h3>Brouillons</h3>
+                <div class="admin-list" id="draftList"></div>
+
+                <hr style="margin:16px 0; border:none; border-top:1px solid #eef6ee;">
+
+                <h3>Publiés</h3>
+                <div class="admin-list" id="publishedList"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Historique -->
+        <section id="panel-historique" class="admin-tab-panel">
+          <div class="content-card">
+            <h3>Historique & Statistiques</h3>
+            <form id="historiqueForm" class="admin-form" style="margin-bottom:12px;">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="histYear">Année</label>
+                  <input id="histYear" type="text" placeholder="2025">
+                </div>
+                <div class="form-group">
+                  <label for="histCount">Nombre de bourses</label>
+                  <input id="histCount" type="number" placeholder="Ex : 152">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="histNote">Note / Détails</label>
+                <textarea id="histNote" rows="3"></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn small" id="addHistBtn">Ajouter</button>
+              </div>
+            </form>
+            <div id="historiqueList"></div>
+          </div>
+        </section>
+
+        <!-- Galerie -->
+        <section id="panel-galerie" class="admin-tab-panel">
+          <div class="content-card">
+            <h3>Galerie - Upload & Gestion</h3>
+            <div class="form-group">
+              <label for="galleryUpload">Ajouter des images</label>
+              <input id="galleryUpload" type="file" accept="image/*" multiple>
+            </div>
+            <div id="galleryList" class="gallery-grid"></div>
+          </div>
+        </section>
+
+        <!-- Boursiers -->
+        <section id="panel-boursiers" class="admin-tab-panel">
+          <div class="content-card">
+            <h3>Gestion des Boursiers</h3>
+            <form id="boursierForm" class="admin-form" style="margin-bottom:12px;">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="boursierName">Nom complet</label>
+                  <input id="boursierName" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="boursierProgram">Programme</label>
+                  <input id="boursierProgram" type="text">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="boursierYear">Année</label>
+                  <input id="boursierYear" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="boursierPhone">Téléphone</label>
+                  <input id="boursierPhone" type="tel">
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn small" id="addBoursierBtn">Ajouter</button>
+              </div>
+            </form>
+            <div id="boursiersList" class="boursiers-grid"></div>
+          </div>
+        </section>
+
+        <!-- Inscription template -->
+        <section id="panel-inscription" class="admin-tab-panel">
+          <div class="content-card">
+            <h3>Template de Formulaire d'Inscription</h3>
+            <p>Editez ici le contenu du formulaire (instructions, critères, champs obligatoires).</p>
+            <div class="form-group">
+              <label for="inscriptionTemplate">Contenu du template</label>
+              <textarea id="inscriptionTemplate" rows="6" placeholder="Texte du formulaire, critères, conditions..."></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn small" id="saveInscriptionTemplate">Enregistrer</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Partenaires -->
+        <section id="panel-partenaires" class="admin-tab-panel">
+          <div class="content-card">
+            <h3>Partenaires & Sponsors</h3>
+            <form id="partnerForm" class="admin-form" style="margin-bottom:12px;">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="partnerName">Nom</label>
+                  <input id="partnerName" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="partnerWebsite">Site web (optionnel)</label>
+                  <input id="partnerWebsite" type="url">
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn small" id="addPartnerBtn">Ajouter</button>
+              </div>
+            </form>
+            <div id="partnerList" class="partners-grid"></div>
+          </div>
+        </section>
+
+      </div>
+
+        <section class="dashboard-overview fade-in">
+            <div class="overview-card">
+                <div style="font-weight:600;margin-bottom:8px;">Overview</div>
+                <ul class="overview-list">
+                    <li>Member Profit <span>+1345</span></li>
+                    <li>Member Profit <span>-1241</span></li>
+                    <li>Member Profit <span>+2341</span></li>
+                    <li>Member Profit <span>-2341</span></li>
+                </ul>
+            </div>
+            <div class="overview-card total-sale">
+                <div style="font-weight:600;margin-bottom:8px;">Total Sale</div>
+                <div class="circle-progress">70%</div>
+                <span class="view-all-btn" onclick="alert('Voir tous les détails')">View All</span>
+            </div>
+            <div class="activity-card">
+                <div style="font-weight:600;margin-bottom:8px;">Activity</div>
+                <ul class="activity-list">
+                    <li><span class="activity-dot"></span> Lorem ipsum activity, lorem ipsum dolor sit amet.</li>
+                    <li><span class="activity-dot"></span> Lorem ipsum activity, lorem ipsum dolor sit amet.</li>
+                    <li><span class="activity-dot"></span> Lorem ipsum activity, lorem ipsum dolor sit amet.</li>
+                </ul>
+                <span class="view-all-btn" onclick="alert('Voir toutes les activités')">View All</span>
+            </div>
+        </section>
+    </main>
+    <script src="dashbord-admin.js"></script>
+    <script src="bourse-admin.js"></script>
+</body>
+</html>
