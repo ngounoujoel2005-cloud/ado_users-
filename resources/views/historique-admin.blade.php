@@ -10,7 +10,12 @@
 <body>
  <!-- Sidebar -->
     <aside class="sidebar">
+<<<<<<< HEAD
         <div class="sidebar-header">M - NGOUNOU</div>
+=======
+        <div class="sidebar-header">
+</div>
+>>>>>>> feature-collegue
         <nav class="sidebar-nav">
             <a href="index-admin" class="active"><i class="fa fa-home"></i> Home</a>
             <a href="annonce-admin"><i class="fa fa-bullhorn"></i> Annonces</a>
@@ -19,11 +24,19 @@
             <a href="media-admin"><i class="fa fa-image"></i> Médias</a>
             <a href="commentaire-admin"><i class="fa fa-comments"></i> Commentaires</a>
             <a href="notification-admin"><i class="fa fa-bell"></i> Notifications</a>
+<<<<<<< HEAD
             <a href="femmes-admin"><i class="fa fa-bell"></i> femme adolescence</a>
             <a href="activites-admin"><i class="fa fa-bell"></i> activites</a>
             <a href="bourse-admin"><i class="fa fa-bell"></i> bourse</a>
             <a href="contact-admin"><i class="fa fa-bell"></i> contact</a>
             <a href="deconnection-admin"><i class="fa fa-sign-out"></i> Quitter</a>
+=======
+            <!-- <a href="femmes-admin"><i class="fa fa-bell"></i> femme adolescence</a> -->
+            <a href="activites-admin"><i class="fa fa-bell"></i> activites</a>
+            <!-- <a href="bourse-admin"><i class="fa fa-bell"></i> bourse</a> -->
+            <a href="contact-admin"><i class="fa fa-bell"></i> contact</a>
+            <a href="{{ route('logout.view') }}"><i class="fa fa-sign-out"></i> Quitter</a>
+>>>>>>> feature-collegue
         </nav>
         <div class="sidebar-footer">
             <a href="administration" style="text-decoration: none;"><div class="support-img">
@@ -41,7 +54,11 @@
             </div>
             <div class="dashboard-user">
                 <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin">
+<<<<<<< HEAD
                 <span>ngounou joel Admin</span>
+=======
+                <span><span style="font-weight:600;">{{$admin->nom}} </span> &nbsp; Admin </span>
+>>>>>>> feature-collegue
             </div>
         </div>
         
@@ -49,7 +66,11 @@
   <div class="top-actions">
     <div class="page-header">
       <h2>Gestion de l'Historique</h2>
+<<<<<<< HEAD
       <div class="stats">9 événements dans la timeline</div>
+=======
+      <div class="stats">{{ $totalEvents }} événements dans la timeline</div>
+>>>>>>> feature-collegue
     </div>
     <div class="actions-right">
       <button class="btn-new" id="openModal"><i class="fa-solid fa-plus"></i> Nouvel Événement</button>
@@ -58,6 +79,7 @@
 
   <!-- TIMELINE -->
   <div class="timeline">
+<<<<<<< HEAD
     <!-- Event 1 -->
     <div class="event">
       <div class="event-icon fondation"><i class="fa-solid fa-building"></i></div>
@@ -125,6 +147,67 @@
     </div>
   </div>
 
+=======
+
+    <!-- Event 1 -->
+    @foreach ($events as $event)
+<div class="event">
+    <div class="event-icon {{ $event->type }}">
+        @if($event->type == 'fondation')
+            <i class="fa-solid fa-building"></i>
+        @elseif($event->type == 'etape')
+            <i class="fa-solid fa-flag-checkered"></i>
+        @elseif($event->type == 'expansion')
+            <i class="fa-solid fa-chart-line"></i>
+        @endif
+    </div>
+
+    <div class="event-content">
+        <div class="event-header">
+            <div style="flex:1">
+                <div class="event-year">{{ $event->year }}</div>
+
+                <div class="event-title-row">
+                    <h3 class="event-title">
+                        {{ ucfirst($event->type) }}
+                    </h3>
+
+                    <span class="badge {{ $event->type }}">
+                        {{ ucfirst($event->type) }}
+                    </span>
+                </div>
+            </div>
+
+            @if($event->image)
+                <img src="{{ asset('storage/' . $event->image) }}"
+                     alt="{{ $event->type }}"
+                     class="event-image">
+            @endif
+        </div>
+
+        <p class="event-desc">{{ $event->message }}</p>
+
+        <div class="event-actions">
+            <button class="btn-edit" onclick="openEditModal({{ $event->id }})">
+                <i class="fa-solid fa-pen"></i> Modifier
+            </button>
+
+            <form action="{{ route('events.destroy', $event->id) }}" 
+                  method="POST" style="display:inline">
+                @csrf
+                @method('DELETE')
+                <button class="btn-delete" onclick="return confirm('Supprimer ?')">
+                    <i class="fa-solid fa-trash"></i> Supprimer
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+@endforeach
+
+   
+>>>>>>> feature-collegue
   <!-- MODAL NOUVEAU -->
   <div class="modal" id="modalNew">
     <div class="backdrop" onclick="closeNewModal()"></div>
@@ -134,6 +217,7 @@
         <button class="x" onclick="closeNewModal()"><i class="fa-solid fa-xmark"></i></button>
       </header>
 
+<<<<<<< HEAD
       <form id="formNew">
         <div class="form-group">
           <label for="newImage">Image URL</label>
@@ -176,6 +260,53 @@
           <button type="submit" class="btn-submit">Créer</button>
         </div>
       </form>
+=======
+          <form id="formNew" method="POST" action="{{ route('events.store') }}" enctype="multipart/form-data">
+          @csrf
+
+          <div class="form-group">
+              <label for="newImage">Image</label>
+              <div class="input-icon">
+                  <i class="fa-solid fa-image"></i>
+                  <input type="file" id="newImage" name="image">
+              </div>
+          </div>
+
+          <div class="form-group">
+              <label for="newMessage">Message</label>
+              <div class="input-icon">
+                  <i class="fa-solid fa-message"></i>
+                  <textarea id="newMessage" name="message" placeholder="Description de l'événement…"></textarea>
+              </div>
+          </div>
+
+          <div class="form-group">
+              <label for="newType">Type d'événement</label>
+              <div class="input-icon">
+                  <i class="fa-solid fa-tag"></i>
+                  <select id="newType" name="type">
+                      <option value="fondation">Fondation</option>
+                      <option value="etape">Étape clé</option>
+                      <option value="expansion">Expansion</option>
+                  </select>
+              </div>
+          </div>
+
+          <div class="form-group">
+              <label for="newYear">Année</label>
+              <div class="input-icon">
+                  <i class="fa-solid fa-calendar"></i>
+                  <input type="number" id="newYear" name="year" placeholder="2024" min="1900" max="2100">
+              </div>
+          </div>
+
+          <div class="form-actions">
+              <button type="button" class="btn-cancel" onclick="closeNewModal()">Annuler</button>
+              <button type="submit" class="btn-submit">Créer</button>
+          </div>
+      </form>
+
+>>>>>>> feature-collegue
     </div>
   </div>
 
@@ -187,6 +318,7 @@
         <h3>Modifier l'Événement</h3>
         <button class="x" onclick="closeEditModal()"><i class="fa-solid fa-xmark"></i></button>
       </header>
+<<<<<<< HEAD
 
       <form id="formEdit">
         <div class="form-group">
@@ -233,6 +365,64 @@
     </div>
   </div>
 
+=======
+            <form id="formEdit"
+      method="POST"
+      action="{{ route('events.update', $event->id) }}"
+      enctype="multipart/form-data">
+
+    @csrf
+    @method('PUT')
+
+    <div class="form-group">
+        <label for="editImage">Image</label>
+        <div class="input-icon">
+            <i class="fa-solid fa-image"></i>
+            <input type="file" id="editImage" name="image" accept="image/*">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="editMessage">Description</label>
+        <div class="input-icon">
+            <i class="fa-solid fa-message"></i>
+            <textarea id="editMessage" name="message"
+                placeholder="Description de l'événement…">{{ old('message', $event->message) }}</textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="editType">Type d'événement</label>
+        <div class="input-icon">
+            <i class="fa-solid fa-tag"></i>
+            <select id="editType" name="type">
+                <option value="fondation" {{ $event->type == 'fondation' ? 'selected' : '' }}>Fondation</option>
+                <option value="etape" {{ $event->type == 'etape' ? 'selected' : '' }}>Étape clé</option>
+                <option value="expansion" {{ $event->type == 'expansion' ? 'selected' : '' }}>Expansion</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="editYear">Année</label>
+        <div class="input-icon">
+            <i class="fa-solid fa-calendar"></i>
+            <input type="number" id="editYear" name="year"
+                   value="{{ old('year', $event->year) }}"
+                   min="1900" max="2100">
+        </div>
+    </div>
+
+    <button type="submit" class="btn-submit">Modifier</button>
+</form>
+
+
+    </div>
+  </div>
+
+            
+
+>>>>>>> feature-collegue
   <script src="{{ asset('js/historique-admin.js') }}"></script>
  
         <section class="dashboard-overview fade-in">
@@ -262,5 +452,9 @@
         </section>
     </main>
     <script src="{{ asset('js/dashbord-admin.js') }}"></script>
+<<<<<<< HEAD
+=======
+    
+>>>>>>> feature-collegue
 </body>
 </html>

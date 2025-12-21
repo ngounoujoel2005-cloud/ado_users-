@@ -7,10 +7,23 @@
     <link rel="stylesheet" href="{{ asset('css/dashbord-admin.css') }}">
     <link rel="stylesheet" href="{{ asset('css/media-admin.css') }}">
 </head>
+<<<<<<< HEAD
 <body>
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-header">M - NGOUNOU</div>
+=======
+<style>
+    #all-btn {
+         text-decoration: none;
+    }
+</style>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+</div>
+>>>>>>> feature-collegue
         <nav class="sidebar-nav">
             <a href="index-admin" class="active"><i class="fa fa-home"></i> Home</a>
             <a href="annonce-admin"><i class="fa fa-bullhorn"></i> Annonces</a>
@@ -19,11 +32,19 @@
             <a href="media-admin"><i class="fa fa-image"></i> Médias</a>
             <a href="commentaire-admin"><i class="fa fa-comments"></i> Commentaires</a>
             <a href="notification-admin"><i class="fa fa-bell"></i> Notifications</a>
+<<<<<<< HEAD
             <a href="femmes-admin"><i class="fa fa-bell"></i> femme adolescence</a>
             <a href="activites-admin"><i class="fa fa-bell"></i> activites</a>
             <a href="bourse-admin"><i class="fa fa-bell"></i> bourse</a>
             <a href="contact-admin"><i class="fa fa-bell"></i> contact</a>
             <a href="deconnection-admin"><i class="fa fa-sign-out"></i> Quitter</a>
+=======
+            <!-- <a href="femmes-admin"><i class="fa fa-bell"></i> femme adolescence</a> -->
+            <a href="activites-admin"><i class="fa fa-bell"></i> activites</a>
+            <!-- <a href="bourse-admin"><i class="fa fa-bell"></i> bourse</a> -->
+            <a href="contact-admin"><i class="fa fa-bell"></i> contact</a>
+            <a href="{{ route('logout.view') }}"><i class="fa fa-sign-out"></i> Quitter</a>
+>>>>>>> feature-collegue
         </nav>
         <div class="sidebar-footer">
             <a href="administration" style="text-decoration: none;"><div class="support-img">
@@ -41,7 +62,11 @@
             </div>
             <div class="dashboard-user">
                 <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin">
+<<<<<<< HEAD
                 <span>ngounou joel Admin</span>
+=======
+                <span> <span style="font-weight:600;font-size:32px;">{{$admin->nom}} </span> &nbsp; Admin </span>
+>>>>>>> feature-collegue
             </div>
         </div>
       
@@ -49,7 +74,11 @@
             <div class="section-header">
                 <div class="section-title">
                     <h3>Gestion des Médias</h3>
+<<<<<<< HEAD
                     <p>6 médias en galerie</p>
+=======
+                    <p>{{ $totalMedias }}  médias en galerie</p>
+>>>>>>> feature-collegue
                 </div>
                 <button class="add-media-btn" onclick="toggleForm()">
                     <span class="glyphicon glyphicon-plus"></span> Ajouter un Média
@@ -58,6 +87,7 @@
 
             <div class="filters">
                 <span class="filter-label">Filtrer par type :</span>
+<<<<<<< HEAD
                 <button class="filter-btn active">Tous (6)</button>
                 <button class="filter-btn">
                     <span class="glyphicon glyphicon-picture"></span> Images (4)
@@ -75,6 +105,42 @@
                     </div>
                 </div>
             </div>
+=======
+                <a href="{{ route('medias.index') }}" class="btn btn-primary filter-btn {{ !request('type') ? 'active' : '' }}" id="all-btn">
+                     Tous ({{ $totalMedias }})
+                </a>
+
+              <a href="{{ route('medias.index', ['type' => 'Image']) }}" class="btn btn-success filter-btn {{ request('type') == 'Image' ? 'active' : '' }}" id="all-btn">
+                 <span class="glyphicon glyphicon-picture"></span> Images ({{ $totalImages }})
+                </a>
+
+            <a href="{{ route('medias.index', ['type' => 'Vidéo']) }}" class="btn btn-warning filter-btn {{ request('type') == 'Vidéo' ? 'active' : '' }}" id="all-btn">
+                <span class="glyphicon glyphicon-facetime-video"></span> Vidéos ({{ $totalVideos }})
+            </a>               
+
+            </div>
+
+
+           <div class="media-grid">
+    @foreach($medias as $media)
+        <div class="media-item">
+            @if($media->type === 'Image')
+                <img src="{{ asset('storage/' . $media->url) }}" alt="{{ $media->title }}">
+            @elseif($media->type === 'Vidéo')
+                <video controls width="100%">
+                    <source src="{{ asset('storage/' . $media->url) }}" type="video/mp4">
+                </video>
+            @endif
+
+            <div class="media-type-badge {{ strtolower($media->type) }}">
+                <span class="glyphicon {{ $media->type === 'Image' ? 'glyphicon-picture' : 'glyphicon-facetime-video' }}"></span> 
+                {{ $media->type }}
+            </div>
+        </div>
+    @endforeach
+</div>
+
+>>>>>>> feature-collegue
         </section>
     </main>
 
@@ -84,6 +150,7 @@
             <button class="close-btn" onclick="toggleForm()">
                 <span class="glyphicon glyphicon-remove"></span>
             </button>
+<<<<<<< HEAD
             <form>
                 <div class="form-group">
                     <label class="form-label">Titre</label>
@@ -104,11 +171,42 @@
                     <label class="form-label">Description (optionnel)</label>
                     <textarea class="form-textarea" placeholder="Description du média..."></textarea>
                 </div>
+=======
+            <form method="POST" enctype="multipart/form-data" action="{{ route('medias.store') }}">
+                @csrf
+                <div class="form-group">
+                    <label>Titre</label>
+                    <input type="text" name="title" class="form-input" placeholder="Titre du média">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Type de média</label>
+                    <select name="type" class="form-select">
+                        <option value="Image">Image</option>
+                        <option value="Vidéo">Vidéo</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">URL du média</label>
+                    <input type="file" name="url">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Description (optionnel)</label>
+                    <textarea name="description"  class="form-textarea" placeholder="Description du média..."></textarea>
+                </div>
+
+>>>>>>> feature-collegue
                 <div style="text-align:right;">
                     <button type="button" class="btn-secondary" onclick="toggleForm()">Annuler</button>
                     <button type="submit" class="btn-primary">Ajouter</button>
                 </div>
             </form>
+<<<<<<< HEAD
+=======
+
+>>>>>>> feature-collegue
         </div>
     </div>
     <script src="{{ asset('js/media-admin.js') }}"></script> 

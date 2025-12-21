@@ -4,12 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Annonce;
+<<<<<<< HEAD
 use Symfony\Component\Mime\Message;
+=======
+use App\Models\Admin;
+use Illuminate\Support\Facades\Auth;
+>>>>>>> feature-collegue
 
 class AnnonceController extends Controller
 {
    public function index()
     {
+<<<<<<< HEAD
         $annonces = Annonce::orderBy('created_at', 'desc')->paginate(10);
         $totalAnnonces = Annonce::count(); // récupère le nombre total d'annonces
         $totalActives = Annonce::where('actif', 1)->count(); // nombre total d'annonces actives
@@ -22,6 +28,13 @@ class AnnonceController extends Controller
             ->get(['message', 'type']);
 
         return view('index' , compact('affiche'));
+=======
+        $annonces = Annonce::orderBy('created_at', 'desc')->paginate(4);
+        $totalAnnonces = Annonce::count(); // récupère le nombre total d'annonces
+        $totalActives = Annonce::where('actif', 1)->count(); // nombre total d'annonces actives
+        $admin = Auth::guard('admin')->user(); // récupère l'admin connecté
+        return view('annonce-admin', compact('annonces', 'totalAnnonces', 'totalActives', 'admin'));
+>>>>>>> feature-collegue
     }
 
     public function store(Request $request)
@@ -43,7 +56,11 @@ class AnnonceController extends Controller
         return back()->with('success', 'Annonce créée avec succès.');
     }
 
+<<<<<<< HEAD
     // Activer/désactiver
+=======
+    // Activer/désactiver 
+>>>>>>> feature-collegue
     public function toggleActif($id)
     {
         $annonce = Annonce::findOrFail($id);

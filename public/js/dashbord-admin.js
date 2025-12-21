@@ -41,12 +41,21 @@
 
         function navigateTo(section) {
             switch(section) {
+<<<<<<< HEAD
                 case 'accueil': window.location.href = 'index'; break;
                 case 'historique': window.location.href = 'A propos-user'; break;
                 case 'activites': window.location.href = 'activiter-user'; break;
                 case 'bourse': window.location.href = 'bource-user'; break;
                 case 'femmes': window.location.href = 'femmeadolescence-user'; break;
                 case 'contact': window.location.href = 'contact-user'; break;
+=======
+                case 'accueil': window.location.href = 'accuille-user.html'; break;
+                case 'historique': window.location.href = 'A propos-user.html'; break;
+                case 'activites': window.location.href = 'activiter-user.html'; break;
+                case 'bourse': window.location.href = 'bource-user.html'; break;
+                case 'femmes': window.location.href = 'femmeadolescence-user.html'; break;
+                case 'contact': window.location.href = 'contact-user.html'; break;
+>>>>>>> feature-collegue
                 default: alert('Section non disponible');
             }
         }
@@ -63,4 +72,8 @@
                 }
             });
         }
+<<<<<<< HEAD
         setActiveSidebarNav();
+=======
+        setActiveSidebarNav();
+>>>>>>> feature-collegue

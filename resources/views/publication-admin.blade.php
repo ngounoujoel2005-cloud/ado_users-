@@ -10,7 +10,12 @@
 <body>
     <!-- Sidebar -->
     <aside class="sidebar">
+<<<<<<< HEAD
         <div class="sidebar-header">M - NGOUNOU</div>
+=======
+        <div class="sidebar-header">
+</div>
+>>>>>>> feature-collegue
         <nav class="sidebar-nav">
             <a href="index-admin" class="active"><i class="fa fa-home"></i> Home</a>
             <a href="annonce-admin"><i class="fa fa-bullhorn"></i> Annonces</a>
@@ -19,11 +24,19 @@
             <a href="media-admin"><i class="fa fa-image"></i> Médias</a>
             <a href="commentaire-admin"><i class="fa fa-comments"></i> Commentaires</a>
             <a href="notification-admin"><i class="fa fa-bell"></i> Notifications</a>
+<<<<<<< HEAD
             <a href="femmes-admin"><i class="fa fa-bell"></i> femme adolescence</a>
             <a href="activites-admin"><i class="fa fa-bell"></i> activites</a>
             <a href="bourse-admin"><i class="fa fa-bell"></i> bourse</a>
             <a href="contact-admin"><i class="fa fa-bell"></i> contact</a>
             <a href="deconnection-admin"><i class="fa fa-sign-out"></i> Quitter</a>
+=======
+            <!-- <a href="femmes-admin"><i class="fa fa-bell"></i> femme adolescence</a> -->
+            <a href="activites-admin"><i class="fa fa-bell"></i> activites</a>
+            <!-- <a href="bourse-admin"><i class="fa fa-bell"></i> bourse</a> -->
+            <a href="contact-admin"><i class="fa fa-bell"></i> contact</a>
+            <a href="{{ route('logout.view') }}"><i class="fa fa-sign-out"></i> Quitter</a>
+>>>>>>> feature-collegue
         </nav>
         <div class="sidebar-footer">
             <a href="administration" style="text-decoration: none;"><div class="support-img">
@@ -41,7 +54,11 @@
             </div>
             <div class="dashboard-user">
                 <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin">
+<<<<<<< HEAD
                 <span>ngounou joel Admin</span>
+=======
+                <span> <span style="font-weight:600;font-size:32px;">{{$admin->nom}} </span> &nbsp; Admin </span>
+>>>>>>> feature-collegue
             </div>
         </div>
         <!-- Publications Section -->
@@ -49,7 +66,11 @@
             <div class="section-header">
                 <div class="section-title">
                     <h3>Gestion des Publications</h3>
+<<<<<<< HEAD
                     <p>4 publications au total</p>
+=======
+                    <p>{{$totalPublications}} publications au total</p>
+>>>>>>> feature-collegue
                 </div>
                 <button class="add-btn" onclick="openNewForm()">
                     <span class="glyphicon glyphicon-plus"></span> Nouvelle Publication
@@ -58,6 +79,7 @@
 
             <div class="publications-list">
                 <!-- Publication 1 -->
+<<<<<<< HEAD
                 <!-- <article class="publication-card" data-title="Lancement du Programme de Mentorat 2025" data-type="Annonce" data-description="Nous sommes fiers d'annoncer le lancement de notre nouveau programme de mentorat qui connectera nos anciens bénéficiaires avec les nouveaux candidats. Ce programme vise à créer un réseau de soutien durable.">
                     <div class="publication-content">
                         <div class="publication-header">
@@ -82,6 +104,9 @@
                         <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=150&h=100&fit=crop" alt="Programme de Mentorat">
                     </div>
                 </article> -->
+=======
+             
+>>>>>>> feature-collegue
                     @foreach($publications as $publication)
     <article class="publication-card" 
              data-title="{{ $publication->titre }}" 
@@ -119,6 +144,7 @@
                 @endif
             </div>
 
+<<<<<<< HEAD
             <p class="publication-description">{{ $publication->message }}</p>
 
             <div class="publication-actions">
@@ -137,6 +163,26 @@
         <div class="publication-image">
             <img src="{{ $publication->image_path ?? 'https://via.placeholder.com/150x100' }}" 
                  alt="{{ $publication->titre }}">
+=======
+
+            <p class="publication-description">{{ $publication->message }}</p>
+
+            <div class="publication-actions">
+    <button class="action-btn edit"
+            onclick="openEditModal({{ $publication->id }}, '{{ $publication->titre }}', '{{ $publication->message }}', '{{ $publication->type }}')">
+        <span class="glyphicon glyphicon-edit"></span> Modifier
+    </button>
+
+    <button class="action-btn delete"
+            onclick="openDeleteModal({{ $publication->id }})">
+        <span class="glyphicon glyphicon-trash"></span> Supprimer
+    </button>
+
+    <button class="action-btn preview">
+        <span class="glyphicon glyphicon-eye-open"></span> Prévisualiser
+    </button>
+</div>
+>>>>>>> feature-collegue
         </div>
 
     </article>
@@ -181,6 +227,7 @@
 
 
     <!-- Formulaire Modifier Publication -->
+<<<<<<< HEAD
     <div id="editForm" class="floating-form-container">
         <div class="floating-form">
             <button class="close-btn" onclick="closeEditForm()"><span class="glyphicon glyphicon-remove"></span></button>
@@ -210,6 +257,81 @@
     </div>
      <script src="{{ asset('js/publication-admin.js') }}"></script> 
  
+=======
+  <!-- Modal Modifier -->
+<div id="editModal" class="modal-overlay" style="display:none;">
+    <div class="modal-box">
+        <h3>Modifier la Publication</h3>
+
+        <form id="editForm" method="POST">
+            @csrf
+            @method('PUT')
+
+            <input type="hidden" name="id" id="editId">
+            <label class="form-label" for="editTitre">Titre :</label>
+            <input type="text" name="titre" id="editTitre" class="form-input" required>
+
+            <label class="form-label" for="editMessage">Message :</label>
+            <textarea name="message" id="editMessage" class="form-input" rows="4" required></textarea>
+
+            <label class="form-label" for="editType">Type :</label>
+            <select name="type" id="editType" class="form-input">
+                <option value="Annonce">Annonce</option>
+                <option value="Événement">Événement</option>
+            </select>
+
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary" onclick="closeEditModal()">Annuler</button>
+                <button type="submit" class="btn btn-primary">Mettre à jour</button>
+            </div>
+        </form>
+    </div>
+</div>
+    
+<!-- Modal Supprimer -->
+<div id="deleteModal" class="modal-overlay" style="display:none;">
+    <div class="modal-box">
+        <h3>Confirmer la suppression</h3>
+        <p>Voulez-vous vraiment supprimer cette publication ?</p>
+
+        <form id="deleteForm" method="POST">
+            @csrf
+            @method('DELETE')
+
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary" onclick="closeDeleteModal()">Annuler</button>
+                <button type="submit" class="btn btn-danger">Supprimer</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+     <script src="{{ asset('js/publication-admin.js') }}"></script> 
+ <script>
+function openEditModal(id, titre, message, type) {
+    document.getElementById('editTitre').value = titre;
+    document.getElementById('editMessage').value = message;
+    document.getElementById('editType').value = type;
+
+    document.getElementById('editForm').action = "/publications/" + id;
+    document.getElementById('editModal').style.display = "flex";
+}
+
+function closeEditModal() {
+    document.getElementById('editModal').style.display = "none";
+}
+
+function openDeleteModal(id) {
+    document.getElementById('deleteForm').action = "/publications/" + id;
+    document.getElementById('deleteModal').style.display = "flex";
+}
+
+function closeDeleteModal() {
+    document.getElementById('deleteModal').style.display = "none";
+}
+</script>
+
+>>>>>>> feature-collegue
         <section class="dashboard-overview fade-in">
             <div class="overview-card">
                 <div style="font-weight:600;margin-bottom:8px;">Overview</div>

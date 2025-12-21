@@ -120,6 +120,7 @@
     .nav { gap: 2px; }
     .card { padding: 4px; }
     .btn-new { font-size: 11px; padding: 4px 6px; }
+<<<<<<< HEAD
 }
 
  .annonces-table {
@@ -177,3 +178,6 @@
     color: gray;
     font-weight: bold;
 }
+=======
+}
+>>>>>>> feature-collegue

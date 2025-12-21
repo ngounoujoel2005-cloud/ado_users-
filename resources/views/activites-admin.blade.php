@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Administrateur - Association Excellence & Développement</title>
     
+<<<<<<< HEAD
     <link rel="stylesheet" href="dashbord-admin.css">
     <link rel="stylesheet" href="activites-admin.css">
+=======
+    <link rel="stylesheet" href="{{ asset('css/dashbord-admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/activites-admin.css') }}">
+    
+>>>>>>> feature-collegue
 </head>
 <body>
    <!-- Sidebar -->
     <aside class="sidebar">
+<<<<<<< HEAD
         <div class="sidebar-header">M - NGOUNOU</div>
         <nav class="sidebar-nav">
             <a href="index-admin.html" class="active"><i class="fa fa-home"></i> Home</a>
@@ -28,6 +35,25 @@
         </nav>
         <div class="sidebar-footer">
             <a href="administration.html" style="text-decoration: none;"><div class="support-img">
+=======
+        <div class="sidebar-header"></div>
+        <nav class="sidebar-nav">
+           <a href="index-admin" class="active"><i class="fa fa-home"></i> Home</a>
+            <a href="annonce-admin"><i class="fa fa-bullhorn"></i> Annonces</a>
+            <a href="publication-admin"><i class="fa fa-file"></i> Publications</a>
+            <a href="historique-admin"><i class="fa fa-clock"></i> Historique</a>
+            <a href="media-admin"><i class="fa fa-image"></i> Médias</a>
+            <a href="commentaire-admin"><i class="fa fa-comments"></i> Commentaires</a>
+            <a href="notification-admin"><i class="fa fa-bell"></i> Notifications</a>
+            <!-- <a href="femmes-admin"><i class="fa fa-bell"></i> femme adolescence</a> -->
+            <a href="activites-admin"><i class="fa fa-bell"></i> activites</a>
+            <!-- <a href="bourse-admin"><i class="fa fa-bell"></i> bourse</a> -->
+            <a href="contact-admin"><i class="fa fa-bell"></i> contact</a>
+            <a href="{{ route('logout.view') }}"><i class="fa fa-sign-out"></i> Quitter</a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="administration" style="text-decoration: none;"><div class="support-img">
+>>>>>>> feature-collegue
                 <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Support" style="width:40px;">
                 <span style="margin-left:8px; color: black;">Administration</span>
             </div></a>
@@ -42,16 +68,40 @@
             </div>
             <div class="dashboard-user">
                 <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin">
+<<<<<<< HEAD
                 <span>ngounou joel Admin</span>
             </div>
         </div>
+=======
+                <span>  </span>
+            </div>
+        </div>
+
+
+         <!-- PAGE -->
+  <div class="wrap">
+    <div class="header-row">
+      <div>
+        <h2 class="page-title">Gestion des Activités</h2>
+        <div class="sub">  21  Annonces au total </div>
+      </div>
+      <button class="btn-new" id="openModal"><i class="fa-solid fa-plus"></i> Nouvelle Annonce</button>
+    </div>
+  </div>
+>>>>>>> feature-collegue
     
      <!-- TOP ACTIONS -->
         <div class="top-actions">
             <div class="page-header">
             <h2>Gestion des activiter</h2>
+<<<<<<< HEAD
             <div class="stats">plus de 50 activiters deja realiser </div>
             </div>
+=======
+            <!-- <div class="stats">plus de 50 activités deja realiser </div> -->
+            </div>
+            
+>>>>>>> feature-collegue
         </div>
 
             <div class="activity-event">
@@ -68,11 +118,20 @@
             </div>
             <!-- ...autres activités... -->
         </section>
+<<<<<<< HEAD
         <section class="gallery fade-in">
             <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&w=400&h=225" alt="Galerie 1">
             <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&w=400&h=225" alt="Galerie 2">
             <img src="https://images.pexels.com/photos/159844/cellular-education-classroom-159844.jpeg?auto=compress&w=400&h=225" alt="Galerie 3">
         </section>
+=======
+        <!-- <section class="gallery fade-in">
+            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&w=400&h=225" alt="Galerie 1">
+            <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&w=400&h=225" alt="Galerie 2">
+            <img src="https://images.pexels.com/photos/159844/cellular-education-classroom-159844.jpeg?auto=compress&w=400&h=225" alt="Galerie 3">
+        </section> -->
+
+>>>>>>> feature-collegue
     </main>
 
         <section class="dashboard-overview fade-in">
@@ -101,6 +160,11 @@
             </div>
         </section>
     </main>
+<<<<<<< HEAD
     <script src="dashbord-admin.js"></script>
+=======
+     <script src="{{ asset('js/dashbord-admin.js')}}"></script>
+      <script src="{{ asset('js/annonce-admin.js') }}"></script> 
+>>>>>>> feature-collegue
 </body>
 </html>

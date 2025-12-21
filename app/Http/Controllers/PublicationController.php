@@ -4,13 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Publication;
+<<<<<<< HEAD
+=======
+use App\Models\Admin;
+use Illuminate\Support\Facades\Auth;
+>>>>>>> feature-collegue
 
 class PublicationController extends Controller
 {
     public function index()
     {
         $publications = Publication::orderBy('created_at', 'desc')->get();
+<<<<<<< HEAD
         return view('publication-admin', compact('publications'));
+=======
+         $totalPublications = Publication::count(); // récupère le nombre total d'annonces
+         $admin = Auth::guard('admin')->user(); // récupère l'admin connecté
+        return view('publication-admin', compact('publications','totalPublications', 'admin'));
+>>>>>>> feature-collegue
     }
 
     public function store(Request $request)
@@ -30,4 +41,39 @@ class PublicationController extends Controller
 
         return redirect()->back()->with('success', 'Publication ajoutée avec succès !');
     }
+<<<<<<< HEAD
 }
+=======
+ 
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'titre' => 'required|string|max:255',
+            'message' => 'required|string',
+            'type' => 'required|string',
+        ]);
+
+        $pub = Publication::findOrFail($id);
+
+        $pub->update([
+            'titre' => $request->titre,
+            'message' => $request->message,
+            'type' => $request->type,
+        ]);
+
+        return back()->with('success', 'Publication modifiée avec succès !');
+    }
+
+
+    public function destroy($id)
+    {
+        $pub = Publication::findOrFail($id);
+        $pub->delete();
+
+        return back()->with('success', 'Publication supprimée avec succès !');
+    }
+
+    
+}
+
+>>>>>>> feature-collegue

@@ -40,6 +40,13 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+<<<<<<< HEAD
+=======
+        'admin' => [
+        'driver' => 'session',
+        'provider' => 'admins',
+    ],
+>>>>>>> feature-collegue
     ],
 
     /*
@@ -64,6 +71,13 @@ return [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
+<<<<<<< HEAD
+=======
+        'admins' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Admin::class,
+    ],
+>>>>>>> feature-collegue
 
         // 'users' => [
         //     'driver' => 'database',

@@ -21,7 +21,20 @@
 
             <h1 class="title">Connexion</h1>
             <p class="subtitle">Accédez à votre espace Association Excellence & Développement</p>
+<<<<<<< HEAD
             <form id="login-form" class="auth-form">
+=======
+            <form id="login-form" class="auth-form"  action="{{ route('login.submit') }}" method="POST">
+              @csrf
+              <!-- messsage d'erreur -->
+                  @if ($errors->any())
+              <div class="alert alert-danger" style="color:red; margin-bottom:10px;">
+                  {{ $errors->first() }}
+              </div>
+          @endif
+
+
+>>>>>>> feature-collegue
               <div class="form-group">
                 <label for="login-username">Nom d'utilisateur</label>
                 <div class="input-wrapper">
@@ -29,7 +42,11 @@
                     <path d="M10 10C12.0711 10 13.75 8.32107 13.75 6.25C13.75 4.17893 12.0711 2.5 10 2.5C7.92893 2.5 6.25 4.17893 6.25 6.25C6.25 8.32107 7.92893 10 10 10Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M17.5 17.5C17.5 14.7386 14.1421 12.5 10 12.5C5.85786 12.5 2.5 14.7386 2.5 17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
+<<<<<<< HEAD
                   <input type="text" id="login-username" placeholder="Entrez votre nom d'utilisateur" required>
+=======
+                  <input type="text" id="login-username"  name="nom" placeholder="Entrez votre nom d'utilisateur" required>
+>>>>>>> feature-collegue
                 </div>
               </div>
 
@@ -40,7 +57,11 @@
                     <path d="M15.8333 9.16667H4.16667C3.24619 9.16667 2.5 9.91286 2.5 10.8333V16.6667C2.5 17.5871 3.24619 18.3333 4.16667 18.3333H15.8333C16.7538 18.3333 17.5 17.5871 17.5 16.6667V10.8333C17.5 9.91286 16.7538 9.16667 15.8333 9.16667Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M5.83333 9.16667V5.83333C5.83333 4.72826 6.27232 3.66846 7.05372 2.88706C7.83512 2.10565 8.89493 1.66667 10 1.66667C11.1051 1.66667 12.1649 2.10565 12.9463 2.88706C13.7277 3.66846 14.1667 4.72826 14.1667 5.83333V9.16667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
+<<<<<<< HEAD
                   <input type="password" id="login-password" placeholder="Entrez votre mot de passe" required>
+=======
+                  <input type="password" id="login-password" name="mot_de_passe" placeholder="Entrez votre mot de passe" required>
+>>>>>>> feature-collegue
                   <button type="button" class="toggle-password" aria-label="Afficher le mot de passe">
                     <svg class="eye-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M1.66667 10C1.66667 10 4.16667 4.16667 10 4.16667C15.8333 4.16667 18.3333 10 18.3333 10C18.3333 10 15.8333 15.8333 10 15.8333C4.16667 15.8333 1.66667 10 1.66667 10Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -59,6 +80,7 @@
                   <a href="#" id="connexion">Se connecter </a>
               </button>
 
+<<<<<<< HEAD
               <button type="button" class="btn btn-secondary" id="continue-visitor">
                 Continuer en tant que visiteur
               </button>
@@ -66,13 +88,26 @@
               <p class="switch-page">
                 Pas encore de compte ? <a href="#" id="show-register">Créer un compte</a>
               </p>
+=======
+              <button type="button" class="btn btn-secondary" id="continue-visitor" disabled>
+                Continuer en tant que visiteur
+              </button>
+
+              <!-- <p class="switch-page" >
+                Pas encore de compte ? <a href="#" id="show-register" disabled>Créer un compte</a>
+              </p> -->
+>>>>>>> feature-collegue
             </form>
           </div>
         </div>
       </div>
 
       <!-- Page d'inscription -->
+<<<<<<< HEAD
       <div id="register-page" class="page">
+=======
+      <!-- <div id="register-page" class="page">
+>>>>>>> feature-collegue
         <div class="container">
           <div class="auth-card">
             <div class="logo-container">
@@ -166,7 +201,11 @@
             </form>
           </div>
         </div>
+<<<<<<< HEAD
       </div>
+=======
+      </div> -->
+>>>>>>> feature-collegue
 
       <!-- Bouton d'aide -->
       <button class="help-button" aria-label="Aide">
@@ -178,6 +217,12 @@
       </button>
     </div>
 
+<<<<<<< HEAD
+=======
+    <script>
+      document.getElementById('continue-visitor').disabled = true; // Désactiver le bouton
+    </script>
+>>>>>>> feature-collegue
      <script src="{{ asset('js/connexion.js') }}"></script>
 
   </body>

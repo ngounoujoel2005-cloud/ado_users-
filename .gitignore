@@ -21,6 +21,7 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+<<<<<<< HEAD
 # Dépendances
 /vendor
 /node_modules
@@ -44,3 +45,5 @@ yarn-error.log
 /.vscode
 .DS_Store
 Thumbs.db
+=======
+>>>>>>> feature-collegue

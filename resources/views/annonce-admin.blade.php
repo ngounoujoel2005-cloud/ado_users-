@@ -8,10 +8,75 @@
    <link rel="stylesheet" href="{{ asset('css/annonce-admin.css') }}">
   <link rel="stylesheet" href="{{ asset('css/dashbord-admin.css') }}">
 </head>
+<<<<<<< HEAD
 <body>
    <!-- Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-header">M - NGOUNOU</div>
+=======
+<style>
+  .annonces-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+.annonces-table th, .annonces-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.annonces-table th {
+    background-color: #4CAF50;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.annonces-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.annonces-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.annonces-table .btn-sm {
+    padding: 4px 8px;
+    font-size: 0.85rem;
+}
+#btn-spp {
+    background-color: #e3342f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.pagination-simple {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pagination-simple a {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+
+.pagination-simple span {
+    color: gray;
+    font-weight: bold;
+}
+</style>
+<body>
+   <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+</div>
+>>>>>>> feature-collegue
          <nav class="sidebar-nav">
             <a href="index-admin" class="active"><i class="fa fa-home"></i> Home</a>
             <a href="annonce-admin"><i class="fa fa-bullhorn"></i> Annonces</a>
@@ -20,11 +85,19 @@
             <a href="media-admin"><i class="fa fa-image"></i> Médias</a>
             <a href="commentaire-admin"><i class="fa fa-comments"></i> Commentaires</a>
             <a href="notification-admin"><i class="fa fa-bell"></i> Notifications</a>
+<<<<<<< HEAD
             <a href="femmes-admin"><i class="fa fa-bell"></i> femme adolescence</a>
             <a href="activites-admin"><i class="fa fa-bell"></i> activites</a>
             <a href="bourse-admin"><i class="fa fa-bell"></i> bourse</a>
             <a href="contact-admin"><i class="fa fa-bell"></i> contact</a>
             <a href="deconnection-admin"><i class="fa fa-sign-out"></i> Quitter</a>
+=======
+            <!-- <a href="femmes-admin"><i class="fa fa-bell"></i> femme adolescence</a> -->
+            <a href="activites-admin"><i class="fa fa-bell"></i> activites</a>
+            <!-- <a href="bourse-admin"><i class="fa fa-bell"></i> bourse</a> -->
+            <a href="contact-admin"><i class="fa fa-bell"></i> contact</a>
+            <a href="{{ route('logout.view') }}"><i class="fa fa-sign-out"></i> Quitter</a>
+>>>>>>> feature-collegue
         </nav>
         <div class="sidebar-footer">
             <a href="administration" style="text-decoration: none;"><div class="support-img">
@@ -42,10 +115,17 @@
             </div>
             <div class="dashboard-user">
                 <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin">
+<<<<<<< HEAD
                 <span>ngounou joel Admin</span>
             </div>
         </div>
 
+=======
+                <span> <span style="font-weight:600;font-size:32px;">{{$admin->nom}} </span> &nbsp; Admin </span>
+            </div>
+        </div>
+        
+>>>>>>> feature-collegue
   <!-- PAGE -->
   <div class="wrap">
     <div class="header-row">
@@ -57,10 +137,16 @@
     </div>
   </div>
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> feature-collegue
    @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
+<<<<<<< HEAD
  <div class="container mt-5">
 
     <table class="table table-bordered table-striped annonces-table">
@@ -125,6 +211,8 @@
 
 
 
+=======
+>>>>>>> feature-collegue
   <!-- MODAL -->
  <form action="{{ route('annonce.store') }}" method="POST">
     @csrf
@@ -181,8 +269,77 @@
 </form>
 
 
+<<<<<<< HEAD
 
 
+=======
+          <div class="container mt-5">
+    <table class="table table-bordered table-striped annonces-table">
+        <thead>
+            <tr>
+                <th>Message</th>
+                <th>Type</th>
+                <th>Date d'expiration</th>
+                <th>Actif</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($annonces as $annonce)
+            <tr>
+                <td>{{ $annonce->message }}</td>
+                <td>{{ $annonce->type }}</td>
+                <td>{{ $annonce->date_expiration ?? '-' }}</td>
+                <td>
+                    @if($annonce->actif)
+                        <span class="badge bg-success">Actif</span>
+                    @else
+                        <span class="badge bg-secondary">Inactif</span>
+                    @endif
+                </td>
+                <td>
+                    <!-- Activer/Désactiver -->
+                    <form action="{{ route('annonce.toggle', $annonce->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('PATCH')
+                        <button class="btn btn-sm {{ $annonce->actif ? 'btn-warning' : 'btn-success' }}">
+                            {{ $annonce->actif ? 'Désactiver' : 'Activer' }}
+                        </button>
+                    </form>
+
+                    <!-- Supprimer -->
+                    <form action="{{ route('annonce.destroy', $annonce->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Voulez-vous vraiment supprimer cette annonce ?');">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-sm btn-danger" id="btn-spp">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+    <div class="pagination-simple">
+    @if ($annonces->onFirstPage())
+        <span>Précédent</span>
+    @else
+        <a href="{{ $annonces->previousPageUrl() }}">Précédent</a>
+    @endif
+
+    @if ($annonces->hasMorePages())
+        <a href="{{ $annonces->nextPageUrl() }}">Suivant</a>
+    @else
+        <span>Suivant</span>
+    @endif
+  </div>
+
+
+</div>
+
+<br><br>
+
+ <script src="{{ asset('js/annonce-admin.js') }}"></script> 
+>>>>>>> feature-collegue
         <section class="dashboard-overview fade-in">
             <div class="overview-card">
                 <div style="font-weight:600;margin-bottom:8px;">Overview</div>
@@ -208,8 +365,14 @@
                 <span class="view-all-btn" onclick="alert('Voir toutes les activités')">View All</span>
             </div>
         </section>
+<<<<<<< HEAD
     </main>
     <script src="{{ asset('js/annonce-admin.js') }}"></script>
     <script src="{{ asset('js/dashbord-admin.js') }}"></script>
+=======
+
+    </main>
+    <script src="{{ asset('js/dashbord-admin.js') }}"></script> 
+>>>>>>> feature-collegue
 </body>
 </html>

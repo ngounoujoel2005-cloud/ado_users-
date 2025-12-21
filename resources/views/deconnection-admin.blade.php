@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Icônes -->
   <link rel="stylesheet" href="{{ asset('css/dashbord-admin.css') }}">
+<<<<<<< HEAD
+=======
+  <link rel="stylesheet" href="{{ asset('css/annonce-admin.css') }}">
+>>>>>>> feature-collegue
   <style>
     :root{
       --bg: #f6fbf8;
@@ -67,7 +71,11 @@
 <body>
     <!-- Sidebar -->
     <aside class="sidebar">
+<<<<<<< HEAD
         <div class="sidebar-header">M - NGOUNOU</div>
+=======
+        <div class="sidebar-header">{{$admin->nom}}</div>
+>>>>>>> feature-collegue
        <nav class="sidebar-nav">
             <a href="index-admin" class="active"><i class="fa fa-home"></i> Home</a>
             <a href="annonce-admin"><i class="fa fa-bullhorn"></i> Annonces</a>
@@ -76,11 +84,19 @@
             <a href="media-admin"><i class="fa fa-image"></i> Médias</a>
             <a href="commentaire-admin"><i class="fa fa-comments"></i> Commentaires</a>
             <a href="notification-admin"><i class="fa fa-bell"></i> Notifications</a>
+<<<<<<< HEAD
             <a href="femmes-admin"><i class="fa fa-bell"></i> femme adolescence</a>
             <a href="activites-admin"><i class="fa fa-bell"></i> activites</a>
             <a href="bourse-admin"><i class="fa fa-bell"></i> bourse</a>
             <a href="contact-admin"><i class="fa fa-bell"></i> contact</a>
             <a href="deconnection-admin"><i class="fa fa-sign-out"></i> Quitter</a>
+=======
+            <!-- <a href="femmes-admin"><i class="fa fa-bell"></i> femme adolescence</a> -->
+            <a href="activites-admin"><i class="fa fa-bell"></i> activites</a>
+            <!-- <a href="bourse-admin"><i class="fa fa-bell"></i> bourse</a> -->
+            <a href="contact-admin"><i class="fa fa-bell"></i> contact</a>
+            <a href="{{ route('logout.view') }}"><i class="fa fa-sign-out"></i> Quitter</a>
+>>>>>>> feature-collegue
         </nav>
         <div class="sidebar-footer">
             <a href="administration" style="text-decoration: none;"><div class="support-img">
@@ -96,9 +112,15 @@
                 <div class="dashboard-title">Dashboard Administrateur</div>
                 <div style="color:#6b7280;font-size:15px;">Bienvenue sur l'espace de gestion de l'association adolescence banka</div>
             </div>
+<<<<<<< HEAD
             <div class="dashboard-user">
                 <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin">
                 <span>ngounou joel Admin</span>
+=======
+            <div class="dashboard-user"style="margin-left:22px">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin">
+                <span> <span style="font-weight:600;font-size:32px;">{{$admin->nom}} </span> &nbsp; Admin </span>
+>>>>>>> feature-collegue
             </div>
         </div>
         
@@ -111,6 +133,7 @@
 
       <div class="actions">
         <button class="btn btn-outline" id="btnCancel">Annuler</button>
+<<<<<<< HEAD
         <a href="/logoutadmin"><button class="btn btn-danger" id="btnConfirm" >
           <i class="fa-solid fa-right-from-bracket"></i> Confirmer la déconnexion
         </button></a>
@@ -127,6 +150,23 @@
     });
   </script>
   
+=======
+      <button class="btn btn-danger" onclick="confirmLogout()">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Confirmer la déconnexion
+    </button>
+
+      </div>
+    </section>
+<script>
+    function confirmLogout() {
+        if (confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) {
+            window.location.href = "{{ route('logout.admin') }}";
+        }
+    }
+</script>
+
+>>>>>>> feature-collegue
         <section class="dashboard-overview fade-in">
             <div class="overview-card">
                 <div style="font-weight:600;margin-bottom:8px;">Overview</div>

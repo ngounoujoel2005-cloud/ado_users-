@@ -6,11 +6,19 @@
     <title>Dashboard Administrateur - Association Excellence & Développement</title>
     <link rel="stylesheet" href="{{ asset('css/contact-admin.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dashbord-admin.css') }}">
+<<<<<<< HEAD
+=======
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+>>>>>>> feature-collegue
 </head>
 <body>
     <!-- Sidebar -->
     <aside class="sidebar">
+<<<<<<< HEAD
         <div class="sidebar-header">M - NGOUNOU</div>
+=======
+        <div class="sidebar-header"></div>
+>>>>>>> feature-collegue
         <nav class="sidebar-nav">
             <a href="index-admin" class="active"><i class="fa fa-home"></i> Home</a>
             <a href="annonce-admin"><i class="fa fa-bullhorn"></i> Annonces</a>
@@ -19,11 +27,19 @@
             <a href="media-admin"><i class="fa fa-image"></i> Médias</a>
             <a href="commentaire-admin"><i class="fa fa-comments"></i> Commentaires</a>
             <a href="notification-admin"><i class="fa fa-bell"></i> Notifications</a>
+<<<<<<< HEAD
             <a href="femmes-admin"><i class="fa fa-bell"></i> femme adolescence</a>
             <a href="activites-admin"><i class="fa fa-bell"></i> activites</a>
             <a href="bourse-admin"><i class="fa fa-bell"></i> bourse</a>
             <a href="contact-admin"><i class="fa fa-bell"></i> contact</a>
             <a href="deconnection-admin"><i class="fa fa-sign-out"></i> Quitter</a>
+=======
+            <!-- <a href="femmes-admin"><i class="fa fa-bell"></i> femme adolescence</a> -->
+            <a href="activites-admin"><i class="fa fa-bell"></i> activites</a>
+            <!-- <a href="bourse-admin"><i class="fa fa-bell"></i> bourse</a> -->
+            <a href="contact-admin"><i class="fa fa-bell"></i> contact</a>
+            <a href="{{ route('logout.view') }}"><i class="fa fa-sign-out"></i> Quitter</a>
+>>>>>>> feature-collegue
         </nav>
         <div class="sidebar-footer">
             <a href="administration" style="text-decoration: none;"><div class="support-img">
@@ -41,7 +57,11 @@
             </div>
             <div class="dashboard-user">
                 <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin">
+<<<<<<< HEAD
                 <span>ngounou joel Admin</span>
+=======
+                <span> </span>
+>>>>>>> feature-collegue
             </div>
         </div>
 
@@ -53,6 +73,37 @@
             </div>
         </div>
 
+<<<<<<< HEAD
+=======
+        <div class="container mt-4">
+    <h3 class="mb-3"></h3>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-success">
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Origine</th>
+                <th>E-mail</th>
+                <th>Mot De Passe</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>val1</td>
+                <td>val1</td>
+                <td>val1</td>
+                <td>val1</td>
+                <td>val1</td>
+                <td>val1</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+>>>>>>> feature-collegue
         <section class="dashboard-overview fade-in">
             <div class="overview-card">
                 <div style="font-weight:600;margin-bottom:8px;">Overview</div>

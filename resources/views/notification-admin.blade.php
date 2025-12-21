@@ -11,7 +11,12 @@
 <body>
     <!-- Sidebar -->
     <aside class="sidebar">
+<<<<<<< HEAD
         <div class="sidebar-header">M - NGOUNOU</div>
+=======
+        <div class="sidebar-header">
+</div>
+>>>>>>> feature-collegue
         <nav class="sidebar-nav">
             <a href="index-admin" class="active"><i class="fa fa-home"></i> Home</a>
             <a href="annonce-admin"><i class="fa fa-bullhorn"></i> Annonces</a>
@@ -20,11 +25,19 @@
             <a href="media-admin"><i class="fa fa-image"></i> Médias</a>
             <a href="commentaire-admin"><i class="fa fa-comments"></i> Commentaires</a>
             <a href="notification-admin"><i class="fa fa-bell"></i> Notifications</a>
+<<<<<<< HEAD
             <a href="femmes-admin"><i class="fa fa-bell"></i> femme adolescence</a>
             <a href="activites-admin"><i class="fa fa-bell"></i> activites</a>
             <a href="bourse-admin"><i class="fa fa-bell"></i> bourse</a>
             <a href="contact-admin"><i class="fa fa-bell"></i> contact</a>
             <a href="deconnection-admin"><i class="fa fa-sign-out"></i> Quitter</a>
+=======
+            <!-- <a href="femmes-admin"><i class="fa fa-bell"></i> femme adolescence</a> -->
+            <a href="activites-admin"><i class="fa fa-bell"></i> activites</a>
+            <!-- <a href="bourse-admin"><i class="fa fa-bell"></i> bourse</a> -->
+            <a href="contact-admin"><i class="fa fa-bell"></i> contact</a>
+            <a href="{{ route('logout.view') }}"><i class="fa fa-sign-out"></i> Quitter</a>
+>>>>>>> feature-collegue
         </nav>
         <div class="sidebar-footer">
             <a href="administration" style="text-decoration: none;"><div class="support-img">
@@ -40,9 +53,15 @@
                 <div class="dashboard-title">Dashboard Administrateur</div>
                 <div style="color:#6b7280;font-size:15px;">Bienvenue sur l'espace de gestion de l'association adolescence banka</div>
             </div>
+<<<<<<< HEAD
             <div class="dashboard-user">
                 <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin">
                 <span>ngounou joel Admin</span>
+=======
+            <div class="dashboard-user" style="margin-left:22px">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin">
+                <span> <span style="font-weight:600;font-size:32px;">{{$admin->nom}} </span> &nbsp; Admin </span>
+>>>>>>> feature-collegue
             </div>
         </div>
       
@@ -60,6 +79,7 @@
     <section class="list">
 
       <!-- Carte 1 -->
+<<<<<<< HEAD
       <article class="card">
         <div class="icon i-alert"><i class="fa-solid fa-triangle-exclamation"></i></div>
         <div>
@@ -100,6 +120,47 @@
           <div class="meta">Envoyée le 20 janvier 2025 à 10:00 par Système automatique</div>
         </div>
       </article>
+=======
+     <div class="notifications-container">
+    @foreach($notifications as $notification)
+    <article class="card">
+        <div class="icon i-alert"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <div>
+            <div class="badges">
+                <span class="card-title">{{ $notification->title }}</span>
+                <span class="badge b-{{ strtolower($notification->type) }}">
+                    <i class="fa-solid fa-bolt"></i> {{ $notification->type }}
+                </span>
+                <span class="badge b-audience">
+                    <i class="fa-solid fa-users"></i> {{ $notification->audience }}
+                </span>
+            </div>
+
+            <p>{{ $notification->message }}</p>
+
+            <div class="meta">
+                Envoyée le {{ $notification->created_at->format('d F Y à H:i') }} 
+                par <span style="color:blue;font-size:15px;">#Directeur Générale</span>
+            </div>
+
+            {{-- Lien de suppression --}}
+            <div style="margin-top:10px;">
+                <form action="{{ route('notifications.destroy', $notification->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" 
+                        style="background:none;border:none;color:red;padding:0;font-size:14px;cursor:pointer;"
+                        onclick="return confirm('Voulez-vous vraiment supprimer cette notification ?')">
+                        Supprimer
+                    </button>
+                </form>
+            </div>
+        </div>
+    </article>
+@endforeach
+
+</div>
+>>>>>>> feature-collegue
 
     </section>
   </div>
@@ -112,21 +173,34 @@
         <h3 id="titre-modal">Envoyer une Notification Push</h3>
         <button class="x" id="closeX" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button>
       </header>
+<<<<<<< HEAD
 <form action="" method="post">
+=======
+<form action="{{ route('notifications.store') }}" method="post">
+    @csrf
+>>>>>>> feature-collegue
       <div class="form">
         <div class="row2">
           <div>
             <label for="title">Titre</label>
             <div class="input-icon">
               <i class="fa-solid fa-heading"></i>
+<<<<<<< HEAD
               <input id="title" type="text" placeholder="Titre de la notification">
+=======
+              <input id="title" type="text" name="title" placeholder="Titre de la notification">
+>>>>>>> feature-collegue
             </div>
           </div>
           <div>
             <label for="type">Type</label>
             <div class="input-icon">
               <i class="fa-solid fa-circle-info"></i>
+<<<<<<< HEAD
               <select id="type">
+=======
+              <select id="type" name="type">
+>>>>>>> feature-collegue
                 <option>Information</option>
                 <option>Urgent</option>
                 <option>Mise à jour</option>
@@ -139,7 +213,11 @@
           <label for="audience">Audience cible</label>
           <div class="input-icon">
             <i class="fa-solid fa-users"></i>
+<<<<<<< HEAD
             <select id="audience">
+=======
+            <select id="audience" name="audience">
+>>>>>>> feature-collegue
               <option>Tous les utilisateurs</option>
               <option>Membres seulement</option>
             </select>
@@ -150,7 +228,11 @@
           <label for="message">Message</label>
           <div class="input-icon">
             <i class="fa-regular fa-message"></i>
+<<<<<<< HEAD
             <textarea id="message" placeholder="Contenu de la notification…"></textarea>
+=======
+            <textarea id="message" name="message" placeholder="Contenu de la notification…"></textarea>
+>>>>>>> feature-collegue
           </div>
         </div>
       </div>
